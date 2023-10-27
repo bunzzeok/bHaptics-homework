@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import './Menu.scss';
 import useOutsideClick from '@/hooks/useOutsideClick';
+import { Available } from '@/interface/interface';
 
 export interface menuProps {
     pWidth: number;
@@ -8,11 +9,12 @@ export interface menuProps {
     pOptions: string[];
     pIsFullWidth: boolean;
     pIsReadonly: boolean;
+    pSelectedAvailableList: Available[];
     onChange: (aString: string) => void;
 }
 
 export const Menu = (props: menuProps) => {
-    const { pWidth, pHeight, pOptions, pIsFullWidth, onChange } = props;
+    const { pWidth, pSelectedAvailableList, pHeight, pOptions, pIsFullWidth, onChange } = props;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const optionRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +34,7 @@ export const Menu = (props: menuProps) => {
         <div className="custom-menu-wrapper" style={{ width: pIsFullWidth ? '100%' : pWidth + 'px', height: pHeight + 'px' }}>
             <div className="menu-input" onClick={handleClick}>
                 <div className="available-wrap">
-                    Available On <div className="games-count">({pOptions.length})</div>
+                    Available On <div className="games-count">({pSelectedAvailableList.length})</div>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path

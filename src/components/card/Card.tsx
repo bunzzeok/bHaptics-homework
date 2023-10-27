@@ -61,7 +61,7 @@ const Card = ({ pGame }: { pGame: Game }) => {
                         />
                     </svg>
                 )}
-                {pGame.name}
+                <div>{pGame.name}</div>
             </div>
         </div>
     );

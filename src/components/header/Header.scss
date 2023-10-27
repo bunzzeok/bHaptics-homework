@@ -14,4 +14,10 @@
         display: flex;
         gap: 62px;
     }
+    @media (max-width: 640px) {
+        .button-list {
+            right: 0%;
+            transform: unset;
+        }
+    }
 }

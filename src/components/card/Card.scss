@@ -13,15 +13,29 @@
         }
     }
     .card-title {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        word-break: break-all;
         padding: 20px;
+        text-align: center;
+        font-weight: 700;
+        display: block;
         display: flex;
         align-items: center;
         svg {
+            display: flex;
+            min-width: 40px;
+            min-height: 16px;
             padding-right: 6px;
         }
+        div {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+    }
+}
+@media (max-width: 640px) {
+    .card {
+        width: calc((100% - 30px) / 2);
     }
 }

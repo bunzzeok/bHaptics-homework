@@ -4,20 +4,27 @@ import { Input } from '@/components/inputs/Input';
 import { useEffect, useState } from 'react';
 import { getAvailableOn, getGameList } from '@/api/apis';
 import { Available, Game } from '@/interface/interface';
-import Card from '@/components/card/card';
+import Card from '@/components/card/Card';
 import { Menu } from '@/components/inputs/Menu';
 import { TextButton } from '@/components/buttons/TextButton';
 
 const Compatibility = () => {
+    // filter 를 위해 구별
     const [sGames, setGames] = useState<Game[]>([]);
     const [sFilterGames, setFilterGames] = useState<Game[]>([]);
+
     const [sFilterValue, setFilterValue] = useState<string>('');
+
+    // 선택되어있다면, 재 선택 불가하도록 설정
     const [sAvailableList, setAvailableList] = useState<Available[]>([]);
     const [sSelectedAvailableList, setSelectedAvailableList] = useState<Available[]>([]);
-    const [sSortValue, setSortValue] = useState<'releaseTime' | 'updateTime' | 'popularity'>('releaseTime');
-    const [sLoading, setLoading] = useState<boolean>(false);
 
+    // sort keys
+    const [sSortValue, setSortValue] = useState<'releaseTime' | 'updateTime' | 'popularity'>('releaseTime');
     const sSortList = ['releaseTime', 'updateTime', 'popularity'];
+
+    //loading
+    const [sLoading, setLoading] = useState<boolean>(false);
 
     const getGames = async (aOption: string) => {
         setLoading(true);
@@ -111,6 +118,7 @@ const Compatibility = () => {
                 </div>
                 <div className="compat-navi">
                     <Menu
+                        pSelectedAvailableList={sSelectedAvailableList}
                         pWidth={276}
                         pHeight={60}
                         pOptions={sAvailableList.map((aAvailable) => {
