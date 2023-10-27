@@ -1,15 +1,14 @@
-import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes } from '@/Routes';
 import './App.css';
+import Header from './components/header/Header';
 
 const App = () => {
     return (
-        <RecoilRoot>
-            <BrowserRouter basename="/">
-                <Routes />
-            </BrowserRouter>
-        </RecoilRoot>
+        <BrowserRouter basename="/">
+            <Header></Header>
+            <Routes />
+        </BrowserRouter>
     );
 };
 

@@ -1,0 +1,102 @@
+.loading-cover {
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-text {
+    top: 0;
+    font-size: 16px;
+    left: 0;
+    padding-bottom: 50vh;
+    position: fixed;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    color: #000000;
+    z-index: 99999;
+}
+.compat {
+    padding: 100px 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .compat-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 62px;
+        .compat-banner {
+            color: #222;
+            font-size: 34px;
+            font-weight: 700;
+            padding-bottom: 20px;
+        }
+        .compat-sub-banner {
+            color: #222;
+            font-family: Spoqa Han Sans Neo;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    .compat-navi {
+        width: 100%;
+        align-items: flex-end;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+    .compat-selected-available-list {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .compat-info {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        padding-bottom: 20px;
+        justify-content: space-between;
+        .compat-items-wrap {
+            display: flex;
+            align-items: center;
+            .compat-items {
+                font-size: 13px;
+                color: #0d0f11;
+                display: flex;
+                align-items: center;
+                padding-right: 25px;
+            }
+        }
+        .compat-sort-options {
+            display: flex;
+            align-items: center;
+            .compat-sort {
+                margin-right: 41px;
+                color: #0d0f11;
+                font-size: 13px;
+            }
+        }
+    }
+    .copat-games {
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

@@ -1,15 +1,14 @@
 import { Routes as Switch, Route, Navigate } from 'react-router-dom';
 
-import Home from '@/pages/Home';
+import Compatibility from './pages/compatibility/Compatibility';
+import TactSuit from './pages/TactSuit';
 
 export const Routes = () => {
-    // const sIsLogin = localStorage.getItem("accessToken");
-    // const sNavigate = useNavigate();
-
     return (
         <Switch>
-            <Route path={'/'} element={<Home />} />
-            <Route path={'/*'} element={<Navigate replace to="/" />} />
+            <Route path={'/compatibility'} element={<Compatibility />} />
+            <Route path={'/tactSuit'} element={<TactSuit />} />
+            <Route path={'/*'} element={<Navigate replace to="/Compatibility" />} />
         </Switch>
     );
 };

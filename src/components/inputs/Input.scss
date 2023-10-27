@@ -1,0 +1,18 @@
+.custom-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #222222;
+    &:hover {
+        border-bottom: 1px solid #222222;
+        background-color: #f8f8f8;
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        background-color: transparent;
+    }
+}

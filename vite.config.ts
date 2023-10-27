@@ -12,4 +12,14 @@ export default defineConfig({
         chunkSizeWarningLimit: 10000,
         target: 'es2020',
     },
+    server: {
+        proxy: {
+            '/api': {
+                target: `https://coding-test-apis-nu.vercel.app/`,
+                changeOrigin: true,
+                secure: false,
+                ws: false,
+            },
+        },
+    },
 });
